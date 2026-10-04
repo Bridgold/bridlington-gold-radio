@@ -16,15 +16,15 @@ body {
   font-family: 'Libre Baskerville', serif;
   color: var(--black);
 
-  /* Background image */
-  background-image: url("../assets/bgr-background.jpeg");
+  /* Fixed to search for your clean lowercase .png background file */
+  background-image: url("../assets/bgr-background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
 
   /* Add a soft off‑white base */
-  background-color: #f9f9f9; /* try #ffffff for pure white or #f7f7f7 for warmer tone */
+  background-color: #f9f9f9;
 
   position: relative;
   z-index: 0;
@@ -52,7 +52,8 @@ body::before {
    HEADER
    ============================================ */
 .app-header {
-  background-image: url("assets/bgr-header.jpeg");
+  /* Path adjusted to point directly into the root assets folder structure */
+  background-image: url("../assets/bgr-header.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -118,7 +119,7 @@ body::before {
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
   cursor: pointer;
-  width: 100%;
+ width: 100%;
   max-width: 300px;
   margin: 10px auto;
   display: block;
@@ -280,7 +281,7 @@ body::before {
   margin-bottom: 1rem;
   font-family: "Libre Baskerville", serif;
   font-size: 1.4rem;
-  color: #d4af37;
+  color: #000000; /* Set to absolute black color theme layout */
   text-align: center;
 }
 
