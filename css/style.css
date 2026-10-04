@@ -1,0 +1,314 @@
+/* ============================================
+   GLOBAL BRANDING VARIABLES
+   ============================================ */
+:root {
+  --gold: #F4C542;
+  --wave-blue: #4DADDF;
+  --royal-blue: #0329FD;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
+/* ============================================
+   PAGE BACKGROUND + GLOBAL TYPOGRAPHY
+   ============================================ */
+body {
+  font-family: 'Libre Baskerville', serif;
+  color: var(--black);
+
+  /* Background image */
+  background-image: url("../assets/bgr-background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  /* Add a soft off‑white base */
+  background-color: #f9f9f9; /* try #ffffff for pure white or #f7f7f7 for warmer tone */
+
+  position: relative;
+  z-index: 0;
+}
+
+/* ============================================
+   BACKGROUND OVERLAY (SOFT DARK FADE)
+   ============================================ */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.45)
+  );
+  pointer-events: none;
+  z-index: 0; /* sits ABOVE background image, BELOW content */
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.app-header {
+  background-image: url("assets/bgr-header.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(1.08);
+  color: var(--black);
+  text-align: center;
+  padding: 24px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 1;
+}
+
+/* Soft fade overlay */
+.app-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.25)
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tagline {
+  font-style: italic;
+  color: var(--royal-blue);
+  margin-top: 6px;
+}
+
+/* ============================================
+   CURVED WAVE SECTION
+   ============================================ */
+.wave-section {
+  background: var(--white);
+  padding: 40px 20px;
+  margin-top: -40px;
+  border-top-left-radius: 50% 20%;
+  border-top-right-radius: 50% 20%;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.primary-button {
+  background: var(--royal-blue);
+  color: var(--gold);
+  padding: 14px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+#installButton {
+  animation: goldGlow 2s infinite ease-in-out;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.app-footer {
+  background: var(--wave-blue);
+  color: var(--black);
+  padding: 16px 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-links a {
+  color: var(--royal-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   SCHEDULE PAGE (FULL SCHEDULE)
+   ============================================ */
+.schedule-container {
+  padding: 20px;
+}
+
+.show-card {
+  background: var(--white);
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.live-now {
+  border-left: 6px solid var(--gold);
+  background: #fff8e1;
+  box-shadow: 0 0 10px rgba(244, 197, 66, 0.4);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.show-time {
+  font-weight: bold;
+  color: var(--royal-blue);
+}
+
+.show-title {
+  font-size: 1.1rem;
+  margin: 4px 0;
+}
+
+.show-presenter {
+  font-style: italic;
+  color: var(--black);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 6px rgba(244,197,66,0.4); }
+  50% { box-shadow: 0 0 14px rgba(244,197,66,0.8); }
+  100% { box-shadow: 0 0 6px rgba(244,197,66,0.4); }
+}
+
+@keyframes goldGlow {
+  0% { box-shadow: 0 0 6px rgba(244, 197, 66, 0.4); }
+  50% { box-shadow: 0 0 14px rgba(244, 197, 66, 0.9); }
+  100% { box-shadow: 0 0 6px rgba(244, 197, 66, 0.4); }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 16px 10px;
+  }
+
+  .logo {
+    width: 110px;
+    height: auto;
+    margin-bottom: 8px;
+  }
+
+  .app-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .primary-button {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
+
+  .now-playing-box {
+    padding: 16px;
+  }
+
+  .now-playing-box h2 {
+    font-size: 1.2rem;
+  }
+
+  #track-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 100px;
+  }
+
+  .app-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .tagline {
+    font-size: 0.8rem;
+  }
+}
+
+/* ============================================
+   TODAY’S SHOWS SECTION (DYNAMIC)
+   ============================================ */
+.today-shows {
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  background: #ffffff10;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(4px);
+}
+
+.today-shows h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: "Libre Baskerville", serif;
+  font-size: 1.4rem;
+  color: #d4af37;
+  text-align: center;
+}
+
+#todays-shows p {
+  margin: 6px 0;
+  padding: 8px 12px;
+  background: #f0f4ff;
+  border-left: 4px solid #1e4b7a;
+  border-radius: 6px;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+#todays-shows p strong {
+  color: #1e4b7a;
+  font-weight: 700;
+}
+
+/* =========================
+   NOW ON AIR PRESENTER PHOTO
+   ========================= */
+.now-on-air-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px auto;
+  border: 3px solid #d4af37;
+  box-shadow: 0 0 10px #00000040;
+}
